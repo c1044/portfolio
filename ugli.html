@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Угли — ресторан на открытом огне</title>
+<meta name="description" content="Угли — мясо, рыба и овощи на открытом огне. Бронь стола онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ash:#dfe4e2; --bone:#f7f5f0; --ink:#1d2a2e; --ember:#e4572e; --moss:#4a5d4f;
+  --head:'Unbounded','Arial Black',sans-serif; --body:'Golos Text','Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--bone);line-height:1.6;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:10;background:var(--bone);border-bottom:1px solid var(--ash)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--head);font-weight:700;text-decoration:none;font-size:18px}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none}
+nav a:hover{color:var(--ember)}
+.btn{display:inline-block;background:var(--ember);color:#fff;padding:14px 28px;border:0;border-radius:4px;font:600 16px var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{background:#c9431d}
+
+.hero{background:var(--ink);color:var(--bone);padding:88px 0 72px;overflow:hidden}
+.hero h1{font-family:var(--head);font-weight:700;font-size:clamp(76px,22vw,230px);line-height:.9;letter-spacing:-.04em}
+.hero h1 span{color:var(--ember)}
+.hero p{max-width:480px;margin:28px 0 32px;font-size:19px;color:#d6dcd9}
+.hero .meta{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:40px;font-size:15px;color:#aab5b1}
+
+section{padding:80px 0}
+h2{font-family:var(--head);font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.15;margin-bottom:12px}
+.lead{max-width:560px;color:#445257;margin-bottom:36px}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{font:500 15px var(--body);padding:9px 18px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:40px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bone)}
+.menu{list-style:none;max-width:720px}
+.menu li{display:flex;align-items:baseline;gap:10px;padding:14px 0}
+.menu .name{font-weight:600}
+.menu .dots{flex:1;border-bottom:2px dotted #9aa7a2;transform:translateY(-4px)}
+.menu .price{font-weight:600;white-space:nowrap}
+.menu small{display:block;font-weight:400;color:#5b6a6e;font-size:14px}
+.menu li[hidden]{display:none}
+
+.about{background:var(--ash)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:12px}
+.facts h3{font-family:var(--head);font-weight:500;font-size:18px;margin-bottom:8px;color:var(--moss)}
+
+.book{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+form{display:grid;gap:14px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select{font:400 16px var(--body);padding:12px 14px;border:1.5px solid #b7c1bd;border-radius:4px;background:#fff;color:var(--ink)}
+.ok{display:none;padding:16px;background:var(--moss);color:#fff;border-radius:4px}
+.ok.show{display:block}
+.info p{margin-bottom:10px}
+
+footer{background:var(--ink);color:#aab5b1;padding:32px 0;font-size:14px}
+
+@media (max-width:760px){
+  nav{display:none}
+  .book{grid-template-columns:1fr;gap:32px}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Угли</a>
+    <nav>
+      <a href="#menu">Меню</a>
+      <a href="#about">О нас</a>
+      <a href="#book">Бронь</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Угли<span>.</span></h1>
+      <p>Мясо, рыба и овощи на открытом огне. Готовим на дровах и яблоневых углях, без заморозки и полуфабрикатов.</p>
+      <a class="btn" href="#book">Забронировать стол</a>
+      <div class="meta">
+        <span>ул. Примерная, 12</span>
+        <span>Ежедневно с 12:00 до 23:00</span>
+        <span>+7 (900) 000-00-00</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Меню</h2>
+      <p class="lead">Меняем позиции по сезону. Всё, что с огня, подаём сразу, поэтому горячее ждать 15–20 минут.</p>
+      <div class="tabs" role="group" aria-label="Разделы меню">
+        <button type="button" data-cat="all" aria-pressed="true">Всё</button>
+        <button type="button" data-cat="fire" aria-pressed="false">С огня</button>
+        <button type="button" data-cat="start" aria-pressed="false">Закуски</button>
+        <button type="button" data-cat="sweet" aria-pressed="false">Десерты</button>
+      </div>
+      <ul class="menu">
+        <li data-cat="start"><span class="name">Печёные овощи с тахини<small>Баклажан, перец, томаты, кунжут</small></span><span class="dots"></span><span class="price">490 ₽</span></li>
+        <li data-cat="start"><span class="name">Тартар из говядины<small>Каперсы, горчица, желток, гренки</small></span><span class="dots"></span><span class="price">690 ₽</span></li>
+        <li data-cat="start"><span class="name">Хлеб с дымным маслом<small>Своя выпечка, масло с копчёной солью</small></span><span class="dots"></span><span class="price">290 ₽</span></li>
+        <li data-cat="fire"><span class="name">Рибай на углях, 300 г<small>Мраморная говядина, соус чимичурри</small></span><span class="dots"></span><span class="price">2 400 ₽</span></li>
+        <li data-cat="fire"><span class="name">Форель на гриле<small>Лимон, укроп, печёный картофель</small></span><span class="dots"></span><span class="price">1 150 ₽</span></li>
+        <li data-cat="fire"><span class="name">Шашлык из баранины<small>Лук, сумах, лаваш</small></span><span class="dots"></span><span class="price">1 090 ₽</span></li>
+        <li data-cat="fire"><span class="name">Цветная капуста целиком<small>Дымный соус, миндаль, зелень</small></span><span class="dots"></span><span class="price">790 ₽</span></li>
+        <li data-cat="sweet"><span class="name">Печёное яблоко<small>Карамель, мороженое из топлёного молока</small></span><span class="dots"></span><span class="price">450 ₽</span></li>
+        <li data-cat="sweet"><span class="name">Шоколадный фондан<small>Ягодный соус, мята</small></span><span class="dots"></span><span class="price">520 ₽</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>Почему у нас пахнет дровами</h2>
+      <p class="lead">Открытая кухня стоит в центре зала: видно, как повара работают с огнём.</p>
+      <div class="facts">
+        <div><h3>Своя печь</h3><p>Яблоня и дуб от местных поставщиков. Мясо выдерживаем на кости от 21 дня.</p></div>
+        <div><h3>Сезонные продукты</h3><p>Овощи и зелень берём у фермеров из области, рыбу привозим дважды в неделю.</p></div>
+        <div><h3>Зал на 48 мест</h3><p>Есть веранда, детский стул и меню без глютена. Можно с собакой.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div>
+        <h2>Бронь стола</h2>
+        <p class="lead">Оставьте заявку, администратор перезвонит в течение 15 минут и подтвердит время.</p>
+        <form id="form">
+          <label>Имя<input name="name" required autocomplete="name"></label>
+          <label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7"></label>
+          <label>Дата<input name="date" type="date" required></label>
+          <label>Гостей
+            <select name="guests"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option></select>
+          </label>
+          <button class="btn" type="submit">Отправить заявку</button>
+          <div class="ok" id="ok" role="status">Заявка отправлена. Мы перезвоним и подтвердим бронь.</div>
+        </form>
+      </div>
+      <div class="info">
+        <h2>Как нас найти</h2>
+        <p>ул. Примерная, 12, вход со двора</p>
+        <p>Ежедневно с 12:00 до 23:00, кухня до 22:30</p>
+        <p>+7 (900) 000-00-00</p>
+        <p>Банкеты и дни рождения: от 8 человек, обсуждаем меню индивидуально.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Угли. Демо-сайт: название, адрес и телефон вымышленные.</div>
+</footer>
+
+<script>
+// Фильтр меню
+const tabs = document.querySelectorAll('.tabs button');
+const items = document.querySelectorAll('.menu li');
+tabs.forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    tabs.forEach(function (t) { t.setAttribute('aria-pressed', 'false'); });
+    tab.setAttribute('aria-pressed', 'true');
+    const cat = tab.dataset.cat;
+    items.forEach(function (li) {
+      li.hidden = cat !== 'all' && li.dataset.cat !== cat;
+    });
+  });
+});
+
+// Форма брони (демо): здесь потом подключается отправка в Telegram или на почту
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('ok').classList.add('show');
+  e.target.reset();
+});
+</script>
+</body>
+</html>
